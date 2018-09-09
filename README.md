@@ -1,10 +1,8 @@
-# learning Context API
+# Why Context API?
 
-Suppose we want to pass data from a parent component to a grandchild component,we have to pass it down through the child component as well.
+Have you ever experienced the pain of trying to get state from the top of your react tree to the bottom? This pain you’re feeling is called “prop drilling” and it’s super annoying. You wind up having to pass props through components that don’t care about the data just so you can send it down to components that do care. And as you move components around this pain is magnified.  
 
-This is where context API comes in handy.
-
-## Without context
+**For example**
 
 The App component renders Parent, which renders Child, which renders Grandchild. However, what's important to notice here is that the Grandchild component wants to render name -- but the data for name lives inside the App component.
 
@@ -32,7 +30,7 @@ Now we can display the name through the grandchild component
 
 <img src="./assets/withoutcontext.png">
 
-##  With context api
+##  Here comes the context API to save the day!
 
 Now let's take a look at how context api helps us to pass data only to the component which requires the specific data.  
 
